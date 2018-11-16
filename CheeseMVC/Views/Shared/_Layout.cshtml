@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CheeseMVC</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -30,9 +32,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Cheese" asp-action="Index">Shoppe Home</a></li>
+                    <li><a asp-area="" asp-controller="Cheese" asp-action="AddCheese">Add Cheese</a></li>
                 </ul>
             </div>
         </div>

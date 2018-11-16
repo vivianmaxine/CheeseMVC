@@ -1,0 +1,26 @@
+﻿@{
+    
+}
+
+<h1 style="text-align: center; font-size: 50px; font-family: 'Dancing Script', cursive;"><em>Vivianna & Greggorio's Cheese Shoppe</em></h1>
+<h4 style="text-align: center;">Fine Cheese for Your Fine Self</h4>
+<img src="http://bardonnews.com.au/wp-content/uploads/2017/11/banner-cheese-and-wine.jpg" width="100%"/>
+
+
+@if (ViewBag.cheeses.Count == 0)
+{
+    <p>You currently have no cheeses at your shoppe.</p>
+}
+
+
+    <!--Instead of string cheese for list, KeyValuePair<type, type> for dictioary-->
+    @foreach (KeyValuePair<string, string> cheese in ViewBag.cheeses)
+    {
+        <h3>@cheese.Key</h3>
+        <p>@cheese.Value</p>
+        <hr />
+    }
+
+<!-- asp-controller and asp-action instead of a href-->
+<!-- allows you to dynamically link, so easy to refactor-->
+<p><a asp-controller="Cheese" asp-action="AddCheese">Add a Cheese</a></p>

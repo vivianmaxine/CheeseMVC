@@ -10,9 +10,9 @@ namespace CheeseMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index() // Index action within the Home controller
         {
-            return View();
+            return View(); // View belongs to base controller class
         }
 
         public IActionResult About()
