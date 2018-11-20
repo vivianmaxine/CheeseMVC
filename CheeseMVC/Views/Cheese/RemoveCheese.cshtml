@@ -1,0 +1,33 @@
+﻿@{
+
+}
+
+<h1>Remove a Cheese</h1>
+
+@if (ViewBag.cheeses.Count == 0)
+{
+    <p>There are no cheeses in your shoppe to remove. I'm sorry.</p>
+}
+
+<form method="post">
+    @foreach (KeyValuePair<string, string> cheeseitem in ViewBag.cheeses)
+    {
+        <input type="checkbox" name="cheeseToDelete" value="@cheeseitem.Key" /> <label>@cheeseitem.Key</label><br />
+    }
+    <br>
+    <input type="submit" value="Delete">
+</form>
+
+<br /><br />
+
+      <form method="post">
+          <select name="cheeseToDelete">
+              @foreach (KeyValuePair<string, string> cheeseitem in ViewBag.cheeses)
+              {
+                  <option value="@cheeseitem.Key" name="cheeseToDelete"> @cheeseitem.Key</option>
+              }
+          </select>
+          <br /><br />
+          <input type="submit" value="Delete" />
+      </form>
+
