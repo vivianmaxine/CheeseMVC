@@ -24,7 +24,6 @@ namespace CheeseMVC.Controllers
 
             // ViewBag.cheeses from view, Cheeses from controller
             ViewBag.cheeses = Cheeses; // Able to relate list/dictionary in controller to viewer
-            ViewBag.namerError = Cheeses; // MAYBE DELETE
             return View();
         }
 
@@ -67,9 +66,9 @@ namespace CheeseMVC.Controllers
             nameError = "";
 
             // If nothing is listed for the cheese name...
-            if (String.IsNullOrEmpty(cheesename))
+            if (String.IsNullOrEmpty(cheesename) || cheesename.Length > 10 || cheesename.Length < 3)
             {
-                ViewBag.nameError = "Please enter a valid name.";
+                ViewBag.nameError = "Please enter a valid name (3-10 characters in length).";
 
                 return View(); // Use this instead of redirecting, which will wipe out the current view
             }
